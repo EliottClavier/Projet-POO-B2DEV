@@ -1,5 +1,7 @@
 <?php
 
+require_once('APIData.php');
+
 class Species extends APIData
 {
 

@@ -1,5 +1,6 @@
 <?php
 
+require_once('APIData.php');
 
 class Planet extends APIData
 {

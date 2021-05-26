@@ -1,6 +1,13 @@
 <?php
 
 require('controllers/Manager.php');
+require('models/Planet.php');
 
 $manager = new Manager();
-print_r($manager->sendRequest('https://swapi.dev/api/planets/'));
+$planet = $manager->jsonMapper(new Planet(), $manager->sendRequest('https://swapi.dev/api/planets/1/'));
+header('Content-Type: application/json');
+echo json_encode($planet, JSON_PRETTY_PRINT);
+
+$planets = $manager->jsonMassMapper($manager->sendRequest('https://swapi.dev/api/planets/')['results']);
+header('Content-Type: application/json');
+echo json_encode($planets, JSON_PRETTY_PRINT);
