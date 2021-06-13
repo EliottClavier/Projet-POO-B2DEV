@@ -1,5 +1,7 @@
 <?php
 
+require_once ROOT_PATH . 'router/Router.php';
+require_once ROOT_PATH . 'controllers';
 
 class Manager
 {
@@ -31,12 +33,20 @@ class Manager
         return $object;
     }
 
+    /*
+     * TODO: Type de l'objet dynamique
+     * */
     public function jsonMassMapper(array $arrayObjects) {
         $array = array();
         foreach($arrayObjects as $object) {
             array_push($array, $this->jsonMapper(new Planet(), $object));
         }
         return $array;
+    }
+
+    public function films() {
+        $controller = new FilmController();
+        return $controller->get();
     }
 
 }
