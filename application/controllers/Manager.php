@@ -1,7 +1,5 @@
 <?php
 
-require_once ROOT_PATH . 'router/Router.php';
-require_once ROOT_PATH . 'controllers';
 
 class Manager
 {

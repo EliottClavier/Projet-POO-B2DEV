@@ -1,7 +1,7 @@
 <?php
 
 define('ROOT_PATH', realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
-require('router/Router.php');
+require ('router/Router.php');
 $router = new Router();
 $router->getControllerFromURL();
 

@@ -1,15 +1,15 @@
 <?php
 
-require_once ROOT_PATH . 'controllers/';
+require_once ROOT_PATH . 'controllers/Manager.php';
 
 class Router extends Manager
 {
 
     public function getControllerFromURL() {
         $url = $this->splitURL($_SERVER['REQUEST_URI']);
+        echo $url[3];
         switch($url[3]) {
             case 'films':
-                echo "test";
                 return $this->films();
             case 'people':
                 return new PeopleController();
