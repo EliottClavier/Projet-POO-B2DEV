@@ -38,9 +38,6 @@ class Manager
         return $object;
     }
 
-    /*
-     * TODO: Type de l'objet dynamique
-     * */
     public function jsonMassMapper(object $object, array $arrayObjects) {
         $array = array();
         foreach($arrayObjects as $obj) {

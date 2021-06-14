@@ -14,9 +14,9 @@ class People extends APIData
     public $mass;
     public $skin_color;
     public $homeworld;
-    public $films = [];
-    public $species = [];
-    public $starships = [];
-    public $vehicles = [];
+    public array $films;
+    public array $species;
+    public array $starships;
+    public array $vehicles;
 
 }

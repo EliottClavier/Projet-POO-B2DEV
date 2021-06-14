@@ -14,7 +14,7 @@ class Planet extends APIData
     public $climate;
     public $terrain;
     public $surface_water;
-    public $residents = [];
-    public $films = [];
+    public array $residents;
+    public array $films;
 
 }

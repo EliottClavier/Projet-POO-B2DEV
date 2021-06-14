@@ -11,9 +11,25 @@ class Film extends APIData
     public $director;
     public $producer;
     public $release_date;
-    public $species = [];
-    public $starships = [];
-    public $vehicles = [];
-    public $characters = [];
+    public array $species;
+    public array $starships;
+    public array $vehicles;
+    public array $characters;
+
+    // Propriétés supplémentaires
+    public array $rating;
+
+    public function __construct()
+    {
+        $this->rating = [];
+    }
+
+    public function rateFilm($note) {
+        array_push($this->rating, $note);
+    }
+
+    public function getRatingAverage() {
+        return array_sum($this->rating) / sizeof($this->rating);
+    }
 
 }

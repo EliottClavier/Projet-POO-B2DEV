@@ -15,7 +15,7 @@ class Engine extends APIData
     public $max_atmosphering_rating;
     public $cargo_capacity;
     public $consumables;
-    public $films = [];
-    public $pilots = [];
+    public array $films;
+    public array $pilots;
 
 }

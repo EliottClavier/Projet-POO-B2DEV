@@ -14,7 +14,7 @@ class Species extends APIData
     public $string_colors;
     public $language;
     public $homeworld;
-    public $people = [];
-    public $films = [];
+    public array  $people;
+    public array $films;
 
 }
