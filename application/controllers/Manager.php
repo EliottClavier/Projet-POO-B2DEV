@@ -1,5 +1,11 @@
 <?php
 
+// Importe tous les controllers
+foreach (glob(ROOT_PATH . "controllers/*.php") as $filename)
+{
+    require_once $filename;
+}
+
 
 class Manager
 {
@@ -19,6 +25,7 @@ class Manager
     public function sendRequest($url) {
         curl_setopt($this->curl, CURLOPT_URL, $url);
         $response = curl_exec($this->curl);
+        print_r($response);
         curl_close($this->curl);
         $this->curl = $this->setcURL();
         return json_decode($response, true);
@@ -34,17 +41,42 @@ class Manager
     /*
      * TODO: Type de l'objet dynamique
      * */
-    public function jsonMassMapper(array $arrayObjects) {
+    public function jsonMassMapper(object $object, array $arrayObjects) {
         $array = array();
-        foreach($arrayObjects as $object) {
-            array_push($array, $this->jsonMapper(new Planet(), $object));
+        foreach($arrayObjects as $obj) {
+            array_push($array, $this->jsonMapper($object, $obj));
         }
         return $array;
     }
 
     public function films() {
         $controller = new FilmController();
-        return $controller->get();
+        print_r($controller->get());
+    }
+
+    public function peoples() {
+        $controller = new PeopleController();
+        print_r($controller->get());
+    }
+
+    public function planets() {
+        $controller = new PlanetController();
+        print_r($controller->get());
+    }
+
+    public function species() {
+        $controller = new SpeciesController();
+        print_r($controller->get());
+    }
+
+    public function starships() {
+        $controller = new StarshipController();
+        print_r($controller->get());
+    }
+
+    public function vehicles() {
+        $controller = new VehicleController();
+        print_r($controller->get());
     }
 
 }

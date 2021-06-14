@@ -7,20 +7,30 @@ class Router extends Manager
 
     public function getControllerFromURL() {
         $url = $this->splitURL($_SERVER['REQUEST_URI']);
-        echo $url[3];
-        switch($url[3]) {
+        // Récupération ID dans l'URL
+//        $id = null;
+//        if (isset($url[2]) && is_numeric($url[2])) {
+//            $id = (int)$url[2];
+//        }
+        switch($url[1]) {
             case 'films':
-                return $this->films();
+                $this->films();
+                break;
             case 'people':
-                return new PeopleController();
+                $this->peoples();
+                break;
             case 'planets':
-                return new PlanetController();
+                $this->planets();
+                break;
             case 'species':
-                return new SpeciesController();
-            case 'starship':
-                return new StarshipController();
-            case 'vehicle':
-                return new VehicleController();
+                $this->species();
+                break;
+            case 'starships':
+                $this->starships();
+                break;
+            case 'vehicles':
+                $this->vehicles();
+                break;
         }
         return true;
     }
