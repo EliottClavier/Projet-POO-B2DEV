@@ -19,7 +19,7 @@ class People extends APIData
     public $starships = [];
     public $vehicles = [];
 
-    public function getBMI() {
+    private function getBMI() {
         return $this->mass / $this->height;
     }
 

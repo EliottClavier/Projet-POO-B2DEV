@@ -5,6 +5,7 @@ require_once ROOT_PATH . 'controllers/Manager.php';
 class Router extends Manager
 {
 
+    // Accède au controller correspondant à l'URL entrée et gère les cas où les URLs ne sont pas pris en compte
     public function getControllerFromURL() {
         $url = $this->splitURL($_SERVER['REQUEST_URI']);
         // Récupération ID dans l'URL
@@ -49,6 +50,7 @@ class Router extends Manager
         return true;
     }
 
+    // Découpe l'URL
     private function splitURL(string $url) {
         return explode('/', parse_url($url)['path']);
     }

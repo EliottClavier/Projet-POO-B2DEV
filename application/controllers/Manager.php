@@ -16,12 +16,14 @@ class Manager
         $this->curl = $this->setcURL();
     }
 
+    // Met en place une instance de cURL
     public function setcURL() {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         return $curl;
     }
 
+    // Envoie une requête par la biais de cURL
     public function sendRequest($url) {
         curl_setopt($this->curl, CURLOPT_URL, $url);
         $response = curl_exec($this->curl);
@@ -30,6 +32,7 @@ class Manager
         return json_decode($response, true);
     }
 
+    // Transforme un JSON en objet, en fonction du type d'object passé
     public function jsonMapper(object $object, array $json) {
         foreach($json as $key=>$value){
             $object->$key = $value;
@@ -37,6 +40,7 @@ class Manager
         return $object;
     }
 
+    // Transforme les réponses JSON de l'API avec plus d'un objet JSON en un tableau d'objets
     public function jsonMassMapper(object $object, array $arrayObjects) {
         $array = array();
         foreach($arrayObjects as $obj) {
@@ -45,58 +49,49 @@ class Manager
         return $array;
     }
 
+    // Appele les fonctions du controller passé en paramètre (get() ou getById() si un id est renseigné)
+    private function useController(object $controller, $id) {
+        if ($id) {
+            print_r($controller->getById($id));
+        } else {
+            print_r($controller->get());
+        }
+    }
+
+    // Génération et utilisation du controller Film
     public function films($id) {
         $controller = new FilmController();
-        if ($id) {
-            print_r($controller->getById($id));
-        } else {
-            print_r($controller->get());
-        }
+        $this->useController($controller, $id);
     }
 
+    // Génération et utilisation du controller People
     public function peoples($id) {
         $controller = new PeopleController();
-        if ($id) {
-            print_r($controller->getById($id));
-        } else {
-            print_r($controller->get());
-        }
+        $this->useController($controller, $id);
     }
 
+    // Génération et utilisation du controller Planet
     public function planets($id) {
         $controller = new PlanetController();
-        if ($id) {
-            print_r($controller->getById($id));
-        } else {
-            print_r($controller->get());
-        }
+        $this->useController($controller, $id);
     }
 
+    // Génération et utilisation du controller Species
     public function species($id) {
         $controller = new SpeciesController();
-        if ($id) {
-            print_r($controller->getById($id));
-        } else {
-            print_r($controller->get());
-        }
+        $this->useController($controller, $id);
     }
 
+    // Génération et utilisation du controller Starships
     public function starships($id) {
         $controller = new StarshipController();
-        if ($id) {
-            print_r($controller->getById($id));
-        } else {
-            print_r($controller->get());
-        }
+        $this->useController($controller, $id);
     }
 
+    // Génération et utilisation du controller Vehicles
     public function vehicles($id) {
         $controller = new VehicleController();
-        if ($id) {
-            print_r($controller->getById($id));
-        } else {
-            print_r($controller->get());
-        }
+        $this->useController($controller, $id);
     }
 
 }
