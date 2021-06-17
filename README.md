@@ -18,9 +18,9 @@ localhost:8000/
 ```
 
 Les endpoints gérés sont les suivants :
-* /films
-* /people
-* /planets
-* /species
-* /starships
-* /vehicles
+* /films et /films/:id
+* /people et /people/:id
+* /planets et /planets/:id
+* /species et /species/:id
+* /starships et /starships/:id
+* /vehicles et /vehicles/:id
