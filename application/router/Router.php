@@ -35,12 +35,12 @@ class Router extends Manager
             case '':
                 echo "Endpoints disponibles: <br> 
                     <ul> 
-                        <li> /films </li> 
-                        <li> /people </li> 
-                        <li> /planets </li> 
-                        <li> /species </li> 
-                        <li> /starships </li> 
-                        <li> /vehicles </li> 
+                        <li> /films et /films/:id </li> 
+                        <li> /people et /people/:id </li> 
+                        <li> /planets et /planets/:id </li> 
+                        <li> /species et /species/:id </li> 
+                        <li> /starships et /starships/:id </li> 
+                        <li> /vehicles et /vehicles/:id </li> 
                     </ul>
                 ";
                 break;
