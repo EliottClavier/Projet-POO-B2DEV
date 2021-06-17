@@ -12,7 +12,7 @@ class Engine extends APIData
     public $length;
     public $crew;
     public $passengers;
-    public $max_atmosphering_rating;
+    public $max_atmosphering_speed;
     public $cargo_capacity;
     public $consumables;
     public $films = [];

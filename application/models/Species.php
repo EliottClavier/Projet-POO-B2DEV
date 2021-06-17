@@ -11,7 +11,7 @@ class Species extends APIData
     public $average_height;
     public $average_lifespan;
     public $hair_colors;
-    public $string_colors;
+    public $skin_colors;
     public $language;
     public $homeworld;
     public $people = [];
