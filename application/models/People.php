@@ -14,10 +14,10 @@ class People extends APIData
     public $mass;
     public $skin_color;
     public $homeworld;
-    public array $films;
-    public array $species;
-    public array $starships;
-    public array $vehicles;
+    public $films = [];
+    public $species = [];
+    public $starships = [];
+    public $vehicles = [];
 
     public function getBMI() {
         return $this->mass / $this->height;

@@ -11,13 +11,13 @@ class Film extends APIData
     public $director;
     public $producer;
     public $release_date;
-    public array $species;
-    public array $starships;
-    public array $vehicles;
-    public array $characters;
+    public $species = [];
+    public $starships = [];
+    public $vehicles = [];
+    public $characters = [];
 
     // Propriétés supplémentaires
-    public array $rating;
+    public $rating = [];
 
     public function __construct()
     {
