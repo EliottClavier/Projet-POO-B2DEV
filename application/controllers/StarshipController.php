@@ -2,9 +2,10 @@
 
 require_once ROOT_PATH . 'controllers/Manager.php';
 require_once ROOT_PATH . 'models/Starship.php';
+require_once ROOT_PATH . 'interfaces/ControllerInterface.php';
 
 
-class StarshipController extends Manager
+class StarshipController extends Manager implements ControllerInterface
 {
 
     public function get() {

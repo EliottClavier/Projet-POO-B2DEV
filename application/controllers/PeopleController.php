@@ -2,9 +2,10 @@
 
 require_once ROOT_PATH . 'controllers/Manager.php';
 require_once ROOT_PATH . 'models/People.php';
+require_once ROOT_PATH . 'interfaces/ControllerInterface.php';
 
 
-class PeopleController extends Manager
+class PeopleController extends Manager implements ControllerInterface
 {
 
     public function get() {

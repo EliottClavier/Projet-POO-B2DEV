@@ -2,9 +2,10 @@
 
 require_once ROOT_PATH . 'controllers/Manager.php';
 require_once ROOT_PATH . 'models/Vehicle.php';
+require_once ROOT_PATH . 'interfaces/ControllerInterface.php';
 
 
-class VehicleController extends Manager
+class VehicleController extends Manager implements ControllerInterface
 {
 
     public function get() {

@@ -2,9 +2,10 @@
 
 require_once ROOT_PATH . 'controllers/Manager.php';
 require_once ROOT_PATH . 'models/Film.php';
+require_once ROOT_PATH . 'interfaces/ControllerInterface.php';
 
 
-class FilmController extends Manager
+class FilmController extends Manager implements ControllerInterface
 {
 
     public function get() {
