@@ -25,7 +25,6 @@ class Manager
     public function sendRequest($url) {
         curl_setopt($this->curl, CURLOPT_URL, $url);
         $response = curl_exec($this->curl);
-        print_r($response);
         curl_close($this->curl);
         $this->curl = $this->setcURL();
         return json_decode($response, true);
@@ -46,34 +45,58 @@ class Manager
         return $array;
     }
 
-    public function films() {
+    public function films($id) {
         $controller = new FilmController();
-        print_r($controller->get());
+        if ($id) {
+            print_r($controller->getById($id));
+        } else {
+            print_r($controller->get());
+        }
     }
 
-    public function peoples() {
+    public function peoples($id) {
         $controller = new PeopleController();
-        print_r($controller->get());
+        if ($id) {
+            print_r($controller->getById($id));
+        } else {
+            print_r($controller->get());
+        }
     }
 
-    public function planets() {
+    public function planets($id) {
         $controller = new PlanetController();
-        print_r($controller->get());
+        if ($id) {
+            print_r($controller->getById($id));
+        } else {
+            print_r($controller->get());
+        }
     }
 
-    public function species() {
+    public function species($id) {
         $controller = new SpeciesController();
-        print_r($controller->get());
+        if ($id) {
+            print_r($controller->getById($id));
+        } else {
+            print_r($controller->get());
+        }
     }
 
-    public function starships() {
+    public function starships($id) {
         $controller = new StarshipController();
-        print_r($controller->get());
+        if ($id) {
+            print_r($controller->getById($id));
+        } else {
+            print_r($controller->get());
+        }
     }
 
-    public function vehicles() {
+    public function vehicles($id) {
         $controller = new VehicleController();
-        print_r($controller->get());
+        if ($id) {
+            print_r($controller->getById($id));
+        } else {
+            print_r($controller->get());
+        }
     }
 
 }

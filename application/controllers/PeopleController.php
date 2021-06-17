@@ -11,4 +11,8 @@ class PeopleController extends Manager
         return $this->jsonMassMapper(new People(), $this->sendRequest('https://swapi.dev/api/people/')['results']);
     }
 
+    public function getById(int $id) {
+        return $this->jsonMapper(new People(), $this->sendRequest('https://swapi.dev/api/people/' . $id));
+    }
+
 }

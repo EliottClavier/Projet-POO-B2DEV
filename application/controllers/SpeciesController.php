@@ -11,4 +11,8 @@ class SpeciesController extends Manager
         return $this->jsonMassMapper(new Species(), $this->sendRequest('https://swapi.dev/api/species/')['results']);
     }
 
+    public function getById(int $id) {
+        return $this->jsonMapper(new Species(), $this->sendRequest('https://swapi.dev/api/species/' . $id));
+    }
+
 }

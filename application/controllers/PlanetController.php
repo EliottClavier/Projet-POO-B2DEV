@@ -11,4 +11,8 @@ class PlanetController extends Manager
         return $this->jsonMassMapper(new Planet(), $this->sendRequest('https://swapi.dev/api/planets/')['results']);
     }
 
+    public function getById(int $id) {
+        return $this->jsonMapper(new Planet(), $this->sendRequest('https://swapi.dev/api/planets/' . $id));
+    }
+
 }

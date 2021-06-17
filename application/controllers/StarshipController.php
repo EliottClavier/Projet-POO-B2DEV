@@ -11,4 +11,8 @@ class StarshipController extends Manager
         return $this->jsonMassMapper(new Starship(), $this->sendRequest('https://swapi.dev/api/starships/')['results']);
     }
 
+    public function getById(int $id) {
+        return $this->jsonMapper(new Starship(), $this->sendRequest('https://swapi.dev/api/starships/' . $id));
+    }
+
 }

@@ -11,4 +11,8 @@ class VehicleController extends Manager
         return $this->jsonMassMapper(new Vehicle(), $this->sendRequest('https://swapi.dev/api/vehicles/')['results']);
     }
 
+    public function getById(int $id) {
+        return $this->jsonMapper(new Vehicle(), $this->sendRequest('https://swapi.dev/api/vehicles/' . $id));
+    }
+
 }

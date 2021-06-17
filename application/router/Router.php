@@ -8,28 +8,28 @@ class Router extends Manager
     public function getControllerFromURL() {
         $url = $this->splitURL($_SERVER['REQUEST_URI']);
         // Récupération ID dans l'URL
-//        $id = null;
-//        if (isset($url[2]) && is_numeric($url[2])) {
-//            $id = (int)$url[2];
-//        }
+        $id = null;
+        if (isset($url[2]) && is_numeric($url[2])) {
+            $id = (int)$url[2];
+        }
         switch($url[1]) {
             case 'films':
-                $this->films();
+                $this->films($id);
                 break;
             case 'people':
-                $this->peoples();
+                $this->peoples($id);
                 break;
             case 'planets':
-                $this->planets();
+                $this->planets($id);
                 break;
             case 'species':
-                $this->species();
+                $this->species($id);
                 break;
             case 'starships':
-                $this->starships();
+                $this->starships($id);
                 break;
             case 'vehicles':
-                $this->vehicles();
+                $this->vehicles($id);
                 break;
             case '':
                 echo "Endpoints disponibles: <br> 

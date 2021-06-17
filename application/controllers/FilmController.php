@@ -11,4 +11,8 @@ class FilmController extends Manager
         return $this->jsonMassMapper(new Film(), $this->sendRequest('https://swapi.dev/api/films/')['results']);
     }
 
+    public function getById(int $id) {
+        return $this->jsonMapper(new Film(), $this->sendRequest('https://swapi.dev/api/films/' . $id));
+    }
+
 }
