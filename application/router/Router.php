@@ -31,11 +31,26 @@ class Router extends Manager
             case 'vehicles':
                 $this->vehicles();
                 break;
+            case '':
+                echo "Endpoints disponibles: <br> 
+                    <ul> 
+                        <li> /films </li> 
+                        <li> /people </li> 
+                        <li> /planets </li> 
+                        <li> /species </li> 
+                        <li> /starships </li> 
+                        <li> /vehicles </li> 
+                    </ul>
+                ";
+                break;
+            default:
+                echo "Aucune route pour l'URL suivant : " . $_SERVER['REQUEST_URI'];
         }
         return true;
     }
 
     private function splitURL(string $url) {
+        print_r(explode('/', parse_url($url)['path'])[0]);
         return explode('/', parse_url($url)['path']);
     }
 

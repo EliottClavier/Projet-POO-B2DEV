@@ -19,4 +19,8 @@ class People extends APIData
     public array $starships;
     public array $vehicles;
 
+    public function getBMI() {
+        return $this->mass / $this->height;
+    }
+
 }
