@@ -1,5 +1,5 @@
 # Projet-POO-B2DEV
-Projet de POO (B2 DEV) autour de l'API https://swapi.dev
+Projet de POO (B2 DEV) autour de l'API https://swapi.dev dirigé par le groupe de MARTIN Maxime, PIGNON Nathan, CHABIN Florent et CLAVIER Eliott.
 
 ### 1. Prérequis
 * Une version de PHP équivalente à la version 7.4 ou plus
