@@ -50,7 +50,6 @@ class Router extends Manager
     }
 
     private function splitURL(string $url) {
-        print_r(explode('/', parse_url($url)['path'])[0]);
         return explode('/', parse_url($url)['path']);
     }
 
