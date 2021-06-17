@@ -52,9 +52,13 @@ class Manager
     // Appele les fonctions du controller passé en paramètre (get() ou getById() si un id est renseigné)
     private function useController(object $controller, $id) {
         if ($id) {
+            echo "<pre>";
             print_r($controller->getById($id));
+            echo "</pre>";
         } else {
+            echo "<pre>";
             print_r($controller->get());
+            echo "</pre>";
         }
     }
 

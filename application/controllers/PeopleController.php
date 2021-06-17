@@ -8,12 +8,19 @@ require_once ROOT_PATH . 'interfaces/ControllerInterface.php';
 class PeopleController extends Manager implements ControllerInterface
 {
 
+    public People $people;
+
+    public function __construct() {
+        parent::__construct();
+        $this->people = new People();
+    }
+
     public function get() {
-        return $this->jsonMassMapper(new People(), $this->sendRequest('https://swapi.dev/api/people/')['results']);
+        return $this->jsonMassMapper($this->people, $this->sendRequest('https://swapi.dev/api/people/')['results']);
     }
 
     public function getById(int $id) {
-        return $this->jsonMapper(new People(), $this->sendRequest('https://swapi.dev/api/people/' . $id));
+        return $this->jsonMapper($this->people, $this->sendRequest('https://swapi.dev/api/people/' . $id));
     }
 
 }

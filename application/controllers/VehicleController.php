@@ -8,12 +8,19 @@ require_once ROOT_PATH . 'interfaces/ControllerInterface.php';
 class VehicleController extends Manager implements ControllerInterface
 {
 
+    public Vehicle $vehicle;
+
+    public function __construct() {
+        parent::__construct();
+        $this->vehicle = new Vehicle();
+    }
+
     public function get() {
-        return $this->jsonMassMapper(new Vehicle(), $this->sendRequest('https://swapi.dev/api/vehicles/')['results']);
+        return $this->jsonMassMapper($this->vehicle, $this->sendRequest('https://swapi.dev/api/vehicles/')['results']);
     }
 
     public function getById(int $id) {
-        return $this->jsonMapper(new Vehicle(), $this->sendRequest('https://swapi.dev/api/vehicles/' . $id));
+        return $this->jsonMapper($this->vehicle, $this->sendRequest('https://swapi.dev/api/vehicles/' . $id));
     }
 
 }
